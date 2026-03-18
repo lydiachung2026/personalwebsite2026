@@ -117,7 +117,7 @@
   }
   
   .role-title {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Oswald", sans-serif;
     color: var(--blue);
     letter-spacing: 1px;
     font-size: clamp(2rem, 4vw, 3.5rem);
