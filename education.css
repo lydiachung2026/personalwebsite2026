@@ -1,0 +1,242 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #ead1db;
+  --pink: #ef59b3;
+  --blue: #2416b6;
+  --text: #234c3a;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: var(--bg);
+  font-family: "Montserrat", sans-serif;
+  color: var(--text);
+}
+
+.page {
+  min-height: 100vh;
+  padding: 28px 56px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  margin-bottom: 18px;
+}
+
+.nav {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.nav-link {
+  color: var(--pink);
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
+  font-family: "Anton", sans-serif;
+  letter-spacing: 1px;
+  font-size: 1.75rem;
+}
+
+.education-page {
+  flex: 1;
+  padding: 12px 80px 0;
+}
+
+.page-title {
+  font-family: "Oswald", sans-serif;
+  color: var(--blue);
+  letter-spacing: 1px;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin: 18px 0 14px;
+  line-height: 1;
+  padding-bottom: 30px;
+}
+
+.education-section {
+  display: grid;
+  grid-template-columns: 430px 1fr;
+  gap: 72px;
+  align-items: start;
+  margin-bottom: 76px;
+}
+
+.education-section-last {
+  margin-bottom: 8px;
+}
+
+.photo-wrap {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.octagon-frame {
+  position: relative;
+  width: 100%;
+  max-width: 430px;
+  aspect-ratio: 1 / 1.15;
+  background: var(--blue);
+  clip-path: polygon(
+    32% 0%,
+    68% 0%,
+    100% 28%,
+    100% 72%,
+    68% 100%,
+    32% 100%,
+    0% 72%,
+    0% 28%
+  );
+  padding: 18px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.octagon-frame-wide {
+  aspect-ratio: 1.5 / 1;
+}
+
+.octagon-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  clip-path: polygon(
+    32% 0%,
+    68% 0%,
+    100% 28%,
+    100% 72%,
+    68% 100%,
+    32% 100%,
+    0% 72%,
+    0% 28%
+  );
+}
+
+.education-copy {
+  padding-top: 8px;
+  max-width: 760px;
+}
+
+.role-title {
+  font-family: "Oswald", sans-serif;
+  color: var(--blue);
+  letter-spacing: 1px;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  margin: 18px 0 14px;
+  line-height: 1.08;
+  padding-bottom: 30px;
+}
+
+.role-details p,
+.role-details li,
+.role-details a {
+  font-size: 1.05rem;
+  line-height: 1.35;
+  color: rgb(41, 41, 41);
+}
+
+.role-details p {
+  margin: 0 0 28px;
+}
+
+.role-details strong {
+  font-weight: 500;
+}
+
+.role-details a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.detail-list {
+  margin: -12px 0 0 20px;
+  padding: 0;
+}
+
+.detail-list li {
+  margin: 0 0 8px;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+  color: rgb(41, 41, 41);
+  font-size: 1rem;
+}
+
+@media (max-width: 1200px) {
+  .education-page {
+    padding: 12px 32px 0;
+  }
+
+  .education-section {
+    grid-template-columns: 360px 1fr;
+    gap: 48px;
+  }
+}
+
+@media (max-width: 900px) {
+  .page {
+    padding: 24px 24px 20px;
+  }
+
+  .education-page {
+    padding: 8px 0 0;
+  }
+
+  .education-section {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    margin-bottom: 56px;
+  }
+
+  .photo-wrap {
+    justify-content: center;
+  }
+
+  .education-copy {
+    max-width: 100%;
+    padding-top: 0;
+  }
+
+  .footer {
+    justify-content: center;
+    margin-top: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav {
+    gap: 16px;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+  }
+
+  .page-title {
+    margin: 20px 0 24px;
+  }
+
+  .role-title {
+    margin-bottom: 24px;
+  }
+
+  .role-details p,
+  .role-details li,
+  .role-details a {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,530 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #ead1db;
+  --pink: #ef59b3;
+  --blue: #2416b6;
+  --text: #234c3a;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: var(--bg);
+  font-family: "Montserrat", sans-serif;
+  color: var(--text);
+}
+
+.page {
+  min-height: 100vh;
+  padding: 28px 56px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  margin-bottom: 18px;
+}
+
+.nav {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.nav-link {
+  color: var(--pink);
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
+  font-family: "Anton", sans-serif;
+  letter-spacing: 1px;
+  font-size: 1.75rem;
+}
+
+.fun-page {
+  flex: 1;
+  padding: 12px 18px 0 22px;
+}
+
+.page-title,
+.section-title {
+  font-family: "Oswald", sans-serif;
+  color: var(--blue);
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.page-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin: 18px 0 34px;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  margin: 0 0 28px;
+}
+
+.centered-title {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.hero-section {
+  margin-bottom: 54px;
+}
+
+.hero-grid,
+.jubilee-grid,
+.skydiving-grid,
+.dual-grid {
+  display: grid;
+  grid-template-columns: 430px 1fr;
+  gap: 72px;
+  align-items: start;
+}
+
+.hero-copy,
+.jubilee-copy,
+.skydiving-copy {
+  padding-top: 8px;
+}
+
+.photo-wrap,
+.align-center {
+  display: flex;
+}
+
+.octagon-frame {
+  position: relative;
+  background: var(--blue);
+  clip-path: polygon(
+    32% 0%,
+    68% 0%,
+    100% 28%,
+    100% 72%,
+    68% 100%,
+    32% 100%,
+    0% 72%,
+    0% 28%
+  );
+  padding: 14px;
+  overflow: hidden;
+}
+
+.octagon-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  clip-path: inherit;
+}
+
+.octagon-xlarge {
+  width: 430px;
+  aspect-ratio: 1 / 0.92;
+}
+
+.octagon-large {
+  width: 360px;
+  aspect-ratio: 1 / 0.98;
+}
+
+.octagon-medium {
+  width: 300px;
+  aspect-ratio: 1 / 0.98;
+}
+
+.octagon-small {
+  width: 235px;
+  aspect-ratio: 1 / 1;
+}
+
+.octagon-tall {
+  width: 330px;
+  aspect-ratio: 1 / 1.45;
+}
+
+.hero-photo {
+  margin-left: 8px;
+}
+
+.video-card {
+  width: 100%;
+  max-width: 520px;
+}
+
+.video-shell {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: rgba(36, 22, 182, 0.08);
+}
+
+.video-shell iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.video-shell-small {
+  max-width: 430px;
+}
+
+.fun-block {
+  margin-bottom: 68px;
+}
+
+.collage-section {
+  margin: 6px 0 78px;
+}
+
+.dance-collage {
+  position: relative;
+  min-height: 760px;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.collage-item {
+  position: absolute;
+}
+
+[data-depth="0"] { z-index: 1; }
+[data-depth="1"] { z-index: 2; }
+[data-depth="2"] { z-index: 3; }
+[data-depth="3"] { z-index: 4; }
+
+.dance-left {
+  top: 92px;
+  left: 70px;
+}
+
+.dance-top {
+  top: 18px;
+  left: 330px;
+}
+
+.dance-right {
+  top: 210px;
+  left: 585px;
+}
+
+.dance-bottom-video {
+  top: 525px;
+  left: 225px;
+  width: 430px;
+}
+
+.hex-gallery {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 0;
+  align-items: start;
+  max-width: 1120px;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+.balloon-gallery .gallery-a { grid-column: 1 / span 3; grid-row: 1 / span 2; transform: translate(26px, 18px); }
+.balloon-gallery .gallery-b { grid-column: 3 / span 3; grid-row: 2; transform: translate(18px, 0); }
+.balloon-gallery .gallery-c { grid-column: 7 / span 3; grid-row: 2; transform: translate(-18px, 0); }
+.balloon-gallery .gallery-d { grid-column: 10 / span 3; grid-row: 1 / span 2; transform: translate(-26px, 18px); }
+.balloon-gallery .gallery-e { grid-column: 2 / span 3; grid-row: 3; transform: translate(20px, -56px); }
+.balloon-gallery .gallery-f { grid-column: 5 / span 3; grid-row: 3; transform: translate(0, -62px); }
+.balloon-gallery .gallery-g { grid-column: 8 / span 3; grid-row: 3; transform: translate(-20px, -56px); }
+
+.jubilee-section {
+  margin-top: 10px;
+}
+
+.jubilee-stack {
+  position: relative;
+  min-height: 690px;
+}
+
+.jubilee-main {
+  position: absolute;
+  top: 0;
+  left: 120px;
+  z-index: 2;
+}
+
+.jubilee-side {
+  position: absolute;
+  top: 262px;
+  left: 0;
+  z-index: 1;
+}
+
+.crafts-gallery .gallery-a { grid-column: 1 / span 3; grid-row: 1 / span 2; transform: translate(24px, 18px); }
+.crafts-gallery .gallery-b { grid-column: 3 / span 3; grid-row: 2; transform: translate(16px, -2px); }
+.crafts-gallery .gallery-c { grid-column: 7 / span 3; grid-row: 2; transform: translate(-16px, -2px); }
+.crafts-gallery .gallery-d { grid-column: 10 / span 3; grid-row: 1 / span 2; transform: translate(-24px, 18px); }
+.crafts-gallery .gallery-e { grid-column: 2 / span 3; grid-row: 3; transform: translate(18px, -58px); }
+.crafts-gallery .gallery-f { grid-column: 5 / span 3; grid-row: 3; transform: translate(0, -64px); }
+.crafts-gallery .gallery-g { grid-column: 8 / span 3; grid-row: 3; transform: translate(-18px, -58px); }
+
+.rect-photo {
+  background: rgba(36, 22, 182, 0.05);
+}
+
+.rect-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.rect-photo-large {
+  width: 100%;
+  max-width: 520px;
+}
+
+.skydiving-stack {
+  position: relative;
+  min-height: 640px;
+  width: 390px;
+  margin: 0 auto;
+}
+
+.sky-top {
+  position: absolute;
+  top: 0;
+  right: 8px;
+  z-index: 2;
+}
+
+.sky-bottom {
+  position: absolute;
+  top: 276px;
+  right: 82px;
+  z-index: 1;
+}
+
+.baking-animals-section {
+  margin-bottom: 26px;
+}
+
+.dual-grid {
+  gap: 86px;
+}
+
+.dual-column {
+  position: relative;
+}
+
+.dual-collage {
+  position: relative;
+  min-height: 720px;
+}
+
+.baking-collage .left-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.baking-collage .right-main {
+  position: absolute;
+  top: 162px;
+  right: 0;
+  z-index: 1;
+}
+
+.baking-collage .left-bottom {
+  position: absolute;
+  top: 362px;
+  left: 78px;
+  z-index: 3;
+}
+
+.animals-collage .left-main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.animals-collage .right-main {
+  position: absolute;
+  top: 126px;
+  right: 0;
+  z-index: 1;
+}
+
+.animals-collage .bottom-center {
+  position: absolute;
+  top: 400px;
+  left: 120px;
+  z-index: 3;
+}
+
+.animals-title {
+  text-align: right;
+  margin-top: -8px;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+  color: rgb(41, 41, 41);
+  font-size: 1rem;
+}
+
+@media (max-width: 1280px) {
+  .fun-page {
+    padding: 12px 0 0;
+  }
+
+  .dance-collage {
+    min-height: 820px;
+    max-width: 920px;
+  }
+
+  .dance-left {
+    left: 24px;
+  }
+
+  .dance-top {
+    left: 265px;
+  }
+
+  .dance-right {
+    left: 500px;
+  }
+
+  .dance-bottom-video {
+    left: 170px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .page {
+    padding: 24px 24px 20px;
+  }
+
+  .hero-grid,
+  .jubilee-grid,
+  .skydiving-grid,
+  .dual-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .dance-collage {
+    min-height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .collage-item,
+  .jubilee-main,
+  .jubilee-side,
+  .sky-top,
+  .sky-bottom,
+  .baking-collage .left-top,
+  .baking-collage .right-main,
+  .baking-collage .left-bottom,
+  .animals-collage .left-main,
+  .animals-collage .right-main,
+  .animals-collage .bottom-center {
+    position: static;
+    transform: none;
+    width: 100%;
+    max-width: none;
+  }
+
+  .video-card,
+  .rect-photo-large,
+  .video-shell-small {
+    max-width: none;
+  }
+
+  .jubilee-stack,
+  .skydiving-stack,
+  .dual-collage {
+    min-height: auto;
+    display: grid;
+    gap: 24px;
+  }
+
+  .hex-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .hex-gallery > div,
+  .balloon-gallery .gallery-a,
+  .balloon-gallery .gallery-b,
+  .balloon-gallery .gallery-c,
+  .balloon-gallery .gallery-d,
+  .balloon-gallery .gallery-e,
+  .balloon-gallery .gallery-f,
+  .balloon-gallery .gallery-g,
+  .crafts-gallery .gallery-a,
+  .crafts-gallery .gallery-b,
+  .crafts-gallery .gallery-c,
+  .crafts-gallery .gallery-d,
+  .crafts-gallery .gallery-e,
+  .crafts-gallery .gallery-f,
+  .crafts-gallery .gallery-g {
+    grid-column: auto;
+    grid-row: auto;
+    transform: none;
+    justify-self: stretch;
+    width: 100%;
+    max-width: none;
+  }
+
+  .octagon-xlarge,
+  .octagon-large,
+  .octagon-medium,
+  .octagon-small,
+  .octagon-tall {
+    width: 100%;
+  }
+
+  .animals-title {
+    text-align: left;
+    margin-top: 18px;
+  }
+
+  .footer {
+    justify-content: center;
+    margin-top: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav {
+    gap: 16px;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+  }
+
+  .page-title {
+    margin: 20px 0 24px;
+  }
+
+  .section-title {
+    margin-bottom: 20px;
+  }
+
+  .dance-collage,
+  .hex-gallery {
+    grid-template-columns: 1fr;
+  }
+}
